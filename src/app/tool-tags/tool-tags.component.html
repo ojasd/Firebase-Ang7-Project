@@ -1,0 +1,26 @@
+<mat-form-field class="chipsAutocomplete">
+  <mat-chip-list #chipList>
+    <mat-chip
+      *ngFor="let tool of tools"
+      [selectable]="selectable"
+      [removable]="removable"
+      (removed)="remove(tool)">
+      {{tool}}
+      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+    </mat-chip>
+    <input
+      placeholder="Add new tools..."
+      #toolInput
+      [formControl]="toolCtrl"
+      [matAutocomplete]="auto"
+      [matChipInputFor]="chipList"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+      [matChipInputAddOnBlur]="addOnBlur"
+      (matChipInputTokenEnd)="add($event)">
+  </mat-chip-list>
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+    <mat-option *ngFor="let tool of filteredTools | async" [value]="tool">
+      {{tool}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
