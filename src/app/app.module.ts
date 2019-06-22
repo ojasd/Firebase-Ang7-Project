@@ -18,16 +18,10 @@ import { ProjectService } from './shared/project.service';
 import { ProjectTypesService } from './shared/project-types.service';
 import { ProjectCategoriesService } from './shared/project-categories.service';
 import { ProjectToolsService } from './shared/project-tools.service';
-
 import { environment } from '../environments/environment';
 import { ToolTagsComponent } from './tool-tags/tool-tags.component';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
-<<<<<<< HEAD
-=======
-import { MatChipsModule } from '@angular/material/chips';
-import { MatFormFieldModule, MatIconModule, MatGridListModule, MatSelectModule, MatDatepickerModule } from '@angular/material';
->>>>>>> 7149ffadc70cf8d51ecce061377d1ab143627a14
 
 @NgModule({
   declarations: [
